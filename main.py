@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 from coinmarketcap import Market
 import pandas as pd
-
+import time
 
 def recebe():
     market = Market()
