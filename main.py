@@ -3,21 +3,35 @@ from coinmarketcap import Market
 import pandas as pd
 import time
 
-def recebe(lista):
+def recebe_btc(lista_btc):
     market = Market()
     ticker = market.ticker(convert="BRL")
     data = ticker['data']['1']['quotes']['USD']['price']
     btc = data
-    lista.append(btc)
-    return lista
+    lista_btc.append(btc)
+    return lista_btc
 
-lista = []
+def recebe_xrp(lista_xrp):
+    market = Market()
+    ticker = market.ticker(convert="BRL")
+    data = ticker['data']['52']['quotes']['USD']['price']
+    xrp = data
+    lista_xrp.append(xrp)
+    return lista_xrp   
+
+lista_btc = []
+lista_xrp = []
 
 fig = plt.figure(figsize=(10,10))
+fig2 = plt.figure(figsize=(10,10))
+
 ax = fig.gca()
+ax2 = fig.gca()
 
 while True:
    ax.clear()
-   ax.plot(recebe(lista))
+   ax2.clear()
+   ax.plot(recebe_btc(lista_btc))
+   ax2.plot(recebe_xrp(lista_xrp))
    plt.pause(1)
    
