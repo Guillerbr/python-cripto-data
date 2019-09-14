@@ -11,13 +11,13 @@ def recebe(lista):
     lista.append(btc)
     return lista
 
-    lista = []
-    fig = plt.figure(figsize=(10,10))
-    ax = fig.gca()
+lista = []
+
+fig = plt.figure(figsize=(10,10))
+ax = fig.gca()
 
 while True:
    ax.clear()
    ax.plot(recebe(lista))
    plt.pause(1)
    
-   time.sleep(1)
