@@ -6,10 +6,9 @@ import pandas as pd
 
 def recebe():
     market = Market()
-    ticker = market.ticker()
-    data = ticker['data']['quotes']['BRL']['price']
-    btc = data['1']
+    ticker = market.ticker(convert="BRL")
+    data = ticker['data']['1']['quotes']['USD']['price']
+    btc = data
+    return btc
 
-return btc
-
-    print(recebe())
+print(recebe())
