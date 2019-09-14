@@ -12,6 +12,5 @@ def recebe():
     return btc
 
 while True:
-
-print("Price BTC -"recebe())
-time.sleep(1)
+  print("Price BTC - ",recebe())
+  time.sleep(1)
